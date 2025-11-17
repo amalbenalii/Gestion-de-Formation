@@ -10,18 +10,18 @@ Cette application permet de gérer efficacement un système de formation avec de
 
 L'API offre des opérations CRUD complètes pour les deux entités, avec validation des données et gestion d'erreurs robuste.
 
-## ✨ Fonctionnalités
+##  Fonctionnalités
 
-- ✅ Gestion complète des formateurs (CRUD)
-- ✅ Gestion complète des formations (CRUD)
-- ✅ Association formations-formateurs
-- ✅ Recherche de formateurs par spécialité
-- ✅ Validation des données avec Mongoose
-- ✅ Gestion d'erreurs centralisée
-- ✅ Support des variables d'environnement
-- ✅ Structure MVC modulaire et maintenable
+-  Gestion complète des formateurs (CRUD)
+-  Gestion complète des formations (CRUD)
+-  Association formations-formateurs
+-  Recherche de formateurs par spécialité
+-  Validation des données avec Mongoose
+-  Gestion d'erreurs centralisée
+-  Support des variables d'environnement
+-  Structure MVC modulaire et maintenable
 
-## 🛠️ Technologies utilisées
+##  Technologies utilisées
 
 - **Node.js** - Environnement d'exécution JavaScript
 - **Express.js** - Framework web pour Node.js
@@ -30,7 +30,7 @@ L'API offre des opérations CRUD complètes pour les deux entités, avec validat
 - **dotenv** - Gestion des variables d'environnement
 - **express-async-handler** - Gestion asynchrone des erreurs
 
-## 📦 Prérequis
+##  Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé :
 
@@ -38,12 +38,12 @@ Avant de commencer, assurez-vous d'avoir installé :
 - [MongoDB](https://www.mongodb.com/try/download/community) (local ou MongoDB Atlas)
 - npm ou yarn
 
-## 🚀 Installation
+##  Installation
 
 1. **Cloner le repository** (ou télécharger le projet)
    ```bash
-   git clone <url-du-repo>
-   cd gestion-de-formation
+   git clone Gestion-de-Formation
+   cd Gestion-de-Formation
    ```
 
 2. **Installer les dépendances**
@@ -55,14 +55,9 @@ Avant de commencer, assurez-vous d'avoir installé :
    
    Créez un fichier `.env` à la racine du projet :
    ```env
-   PORT=3001
    MONGO_URI=mongodb://localhost:27017/gestion-formation
    ```
    
-   Pour MongoDB Atlas, utilisez :
-   ```env
-   MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/gestion-formation?retryWrites=true&w=majority
-   ```
 
 4. **Démarrer le serveur**
    
@@ -70,15 +65,10 @@ Avant de commencer, assurez-vous d'avoir installé :
    ```bash
    npm run dev
    ```
-   
-   Mode production :
-   ```bash
-   npm start
-   ```
 
 Le serveur sera accessible sur `http://localhost:3001` (ou le port spécifié dans `.env`)
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 gestion-de-formation/
@@ -100,7 +90,7 @@ gestion-de-formation/
 └── README.md                 # Documentation du projet
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### Formateurs
 
@@ -123,92 +113,8 @@ gestion-de-formation/
 | PUT | `/api/formations/:id` | Mettre à jour une formation |
 | DELETE | `/api/formations/:id` | Supprimer une formation |
 
-## 📝 Exemples d'utilisation
 
-### Créer un formateur
-
-```bash
-POST /api/formateurs
-Content-Type: application/json
-
-{
-  "nom": "Jean Dupont",
-  "specialite": "Développement Web",
-  "email": "jean.dupont@example.com",
-  "anneesExperience": 5
-}
-```
-
-**Réponse :**
-```json
-{
-  "success": true,
-  "message": "Formateur créé avec succès",
-  "data": {
-    "_id": "...",
-    "nom": "Jean Dupont",
-    "specialite": "Développement Web",
-    "email": "jean.dupont@example.com",
-    "anneesExperience": 5,
-    "createdAt": "...",
-    "updatedAt": "..."
-  }
-}
-```
-
-### Créer une formation
-
-```bash
-POST /api/formations
-Content-Type: application/json
-
-{
-  "titre": "Formation React Avancé",
-  "description": "Apprenez les concepts avancés de React",
-  "duree": 40,
-  "prix": 899,
-  "formateur": "ID_DU_FORMATEUR",
-  "dateDebut": "2024-03-01"
-}
-```
-
-### Récupérer toutes les formations
-
-```bash
-GET /api/formations
-```
-
-**Réponse :**
-```json
-{
-  "success": true,
-  "count": 2,
-  "data": [
-    {
-      "_id": "...",
-      "titre": "Formation React Avancé",
-      "description": "...",
-      "duree": 40,
-      "prix": 899,
-      "formateur": {
-        "_id": "...",
-        "nom": "Jean Dupont",
-        "specialite": "Développement Web",
-        "email": "jean.dupont@example.com"
-      },
-      "dateDebut": "2024-03-01T00:00:00.000Z"
-    }
-  ]
-}
-```
-
-### Rechercher des formateurs par spécialité
-
-```bash
-GET /api/formateurs/specialite/Développement
-```
-
-## 🔒 Validation des données
+##  Validation des données
 
 ### Formateur
 - **nom** : Obligatoire, 2-50 caractères
@@ -224,7 +130,7 @@ GET /api/formateurs/specialite/Développement
 - **formateur** : Obligatoire (référence à un formateur existant)
 - **dateDebut** : Obligatoire (format Date)
 
-## ⚠️ Gestion d'erreurs
+##  Gestion d'erreurs
 
 L'API retourne des réponses JSON standardisées :
 
@@ -252,20 +158,8 @@ Codes de statut HTTP :
 - `404` : Ressource non trouvée
 - `500` : Erreur serveur
 
-## 🧪 Scripts disponibles
+##  Scripts disponibles
 
 - `npm start` : Démarrer le serveur en mode production
 - `npm run dev` : Démarrer le serveur en mode développement (avec nodemon)
-
-## 📄 Licence
-
-ISC
-
-## 👤 Auteur
-
-Projet développé pour la gestion de formations et formateurs.
-
----
-
-**Note** : Assurez-vous que MongoDB est en cours d'exécution avant de démarrer l'application.
 
