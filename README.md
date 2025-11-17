@@ -1,8 +1,8 @@
-# 🎓 Gestion de Formation
+#  Gestion de Formation
 
 API REST complète pour la gestion de formations et de formateurs, construite avec Node.js et Express.
 
-## 📋 Description
+##  Description
 
 Cette application permet de gérer efficacement un système de formation avec deux entités principales :
 - **Formateurs** : Gestion des formateurs avec leurs spécialités et expériences
